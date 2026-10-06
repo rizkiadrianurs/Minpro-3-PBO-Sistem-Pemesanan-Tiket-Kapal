@@ -8,7 +8,7 @@ package model;
  *
  * @author ACER
  */
-public class KapalEkonomi extends Kapal {
+public class KapalEkonomi extends Kapal implements InformasiKapal {
 
     private String fasilitasEkonomi;
 
@@ -26,14 +26,26 @@ public class KapalEkonomi extends Kapal {
     public void setFasilitasEkonomi(String fasilitasEkonomi) {
         if (fasilitasEkonomi != null && !fasilitasEkonomi.trim().isEmpty()) {
             this.fasilitasEkonomi = fasilitasEkonomi;
+        } else {
+            System.out.println("Fasilitas ekonomi tidak boleh kosong.");
         }
     }
 
     @Override
-    public void tampilkanInfo() {
-        System.out.println("Nama Kapal        : " + getNamaKapal());
-        System.out.println("Tujuan            : " + getTujuan());
-        System.out.println("Harga Tiket       : Rp" + getHargaTiket());
+    public String getJenisKapal() {
+        return "Kapal Ekonomi";
+    }
+
+    @Override
+    public void tampilkanInformasiDasar() {
+        System.out.println("Nama Kapal  : " + getNamaKapal());
+        System.out.println("Tujuan      : " + getTujuan());
+        System.out.println("Harga Tiket : Rp" + getHargaTiket());
+        System.out.println("Jenis Kapal : " + getJenisKapal());
+    }
+
+    @Override
+    public void tampilkanFasilitas() {
         System.out.println("Fasilitas Ekonomi : " + fasilitasEkonomi);
     }
 }

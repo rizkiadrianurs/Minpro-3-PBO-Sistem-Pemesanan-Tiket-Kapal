@@ -44,7 +44,6 @@ public class PemesananController {
         );
 
         Pemesanan pemesanan1 = new Pemesanan(
-                "101",
                 penumpang1,
                 kapal1,
                 2
@@ -64,7 +63,6 @@ public class PemesananController {
         );
 
         Pemesanan pemesanan2 = new Pemesanan(
-                "102",
                 penumpang2,
                 kapal2,
                 1
@@ -106,19 +104,6 @@ public class PemesananController {
         System.out.println();
         System.out.println("===== TAMBAH PEMESANAN =====");
 
-        String idPemesanan;
-
-        while (true) {
-
-            idPemesanan = view.inputIdPemesanan();
-
-            if (idSudahAda(idPemesanan)) {
-                System.out.println("ID sudah digunakan.");
-            } else {
-                break;
-            }
-        }
-
         String nama = view.inputNama();
         String nik = view.inputNik();
         int umur = view.inputUmur();
@@ -136,7 +121,6 @@ public class PemesananController {
         );
 
         Pemesanan pemesanan = new Pemesanan(
-                idPemesanan,
                 penumpang,
                 kapal,
                 jumlahTiket
@@ -146,7 +130,9 @@ public class PemesananController {
 
         System.out.println();
         System.out.println("Pemesanan berhasil ditambahkan.");
-        System.out.println("Total Harga : Rp"
+        System.out.println("ID Pemesanan : "
+                + pemesanan.getIdPemesanan());
+        System.out.println("Total Harga   : Rp"
                 + pemesanan.getTotalHarga());
     }
 
@@ -169,11 +155,14 @@ public class PemesananController {
                 String nikBaru = view.inputNik();
                 int umurBaru = view.inputUmur();
 
-                int pilihKapalBaru = view.inputPilihanKapalBaru();
+                int pilihKapalBaru =
+                        view.inputPilihanKapalBaru();
 
-                Kapal kapalBaru = buatKapal(pilihKapalBaru);
+                Kapal kapalBaru =
+                        buatKapal(pilihKapalBaru);
 
-                int jumlahBaru = view.inputJumlahTiketBaru();
+                int jumlahBaru =
+                        view.inputJumlahTiketBaru();
 
                 p.getPenumpang().setNama(namaBaru);
                 p.getPenumpang().setNik(nikBaru);
@@ -210,7 +199,8 @@ public class PemesananController {
                 System.out.println("Nama Penumpang : "
                         + p.getPenumpang().getNama());
 
-                int konfirmasi = view.inputKonfirmasiHapus();
+                int konfirmasi =
+                        view.inputKonfirmasiHapus();
 
                 if (konfirmasi == 1) {
 
@@ -219,7 +209,9 @@ public class PemesananController {
 
                 } else {
 
-                    System.out.println("Penghapusan dibatalkan.");
+                    System.out.println(
+                            "Penghapusan dibatalkan."
+                    );
                 }
 
                 return;
@@ -227,18 +219,6 @@ public class PemesananController {
         }
 
         System.out.println("ID Pemesanan tidak ditemukan.");
-    }
-
-    private boolean idSudahAda(String idPemesanan) {
-
-        for (Pemesanan p : daftarPemesanan) {
-
-            if (p.getIdPemesanan().equals(idPemesanan)) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     private Kapal buatKapal(int pilihan) {

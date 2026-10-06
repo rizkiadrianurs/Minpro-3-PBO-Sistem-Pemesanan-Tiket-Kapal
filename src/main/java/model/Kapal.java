@@ -8,7 +8,7 @@ package model;
  *
  * @author ACER
  */
-public class Kapal {
+public abstract class Kapal {
 
     private String namaKapal;
     private String tujuan;
@@ -56,9 +56,5 @@ public class Kapal {
         }
     }
 
-    public void tampilkanInfo() {
-        System.out.println("Nama Kapal  : " + namaKapal);
-        System.out.println("Tujuan      : " + tujuan);
-        System.out.println("Harga Tiket : Rp" + hargaTiket);
-    }
+    public abstract String getJenisKapal();
 }

@@ -3,25 +3,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
-
-import model.Kapal;
-
 /**
  *
  * @author ACER
  */
 public class Pemesanan {
-    
+
+    private static int nomorBerikutnya = 1;
+
     private final String idPemesanan;
     private Penumpang penumpang;
     private Kapal kapal;
     private int jumlahTiket;
 
-    public Pemesanan(String idPemesanan, Penumpang penumpang, Kapal kapal, int jumlahTiket) {
-        this.idPemesanan = idPemesanan;
-        this.penumpang = penumpang;
-        this.kapal = kapal;
-        this.jumlahTiket = jumlahTiket;
+    public Pemesanan(Penumpang penumpang, Kapal kapal, int jumlahTiket) {
+
+        idPemesanan = String.format("%03d", nomorBerikutnya++);
+
+        setPenumpang(penumpang);
+        setKapal(kapal);
+        setJumlahTiket(jumlahTiket);
+    }
+
+    // Constructor overloading
+    public Pemesanan(Penumpang penumpang, Kapal kapal) {
+        this(penumpang, kapal, 1);
     }
 
     public String getIdPemesanan() {

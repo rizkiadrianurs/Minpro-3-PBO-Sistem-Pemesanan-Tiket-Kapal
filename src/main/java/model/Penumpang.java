@@ -15,9 +15,9 @@ public class Penumpang {
     private int umur;
 
     public Penumpang(String nama, String nik, int umur) {
-        this.nama = nama;
-        this.nik = nik;
-        this.umur = umur;
+        setNama(nama);
+        setNik(nik);
+        setUmur(umur);
     }
 
     public String getNama() {
