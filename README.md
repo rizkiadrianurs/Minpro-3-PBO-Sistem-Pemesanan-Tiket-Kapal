@@ -420,4 +420,6 @@ Penerapan pada `KapalEkonomi`:
 
 <img width="702" height="265" alt="image" src="https://github.com/user-attachments/assets/87bf2ec4-8e15-45f7-8162-0fa9a7010645" />
 
-Pada `KapalEkonomi`, class juga menggunakan `implements InformasiKapal` dan mengimplementasikan kedua method yang ditentukan oleh interface. Informasi yang ditampilkan disesuaikan dengan kapal ekonomi, termasuk fasilitas yang tersedia. Interface tersebut kemudian digunakan pada `PemesananView` untuk menampilkan informasi kapal. Program mengecek apakah objek kapal mengimplementasikan `InformasiKapal`, kemudian menggunakan interface tersebut untuk memanggil method informasi kapal. Dengan penerapan ini, proses penampilan informasi kapal menjadi lebih terstruktur karena class yang ingin menyediakan informasi dasar dan fasilitas harus mengikuti kontrak yang telah ditentukan oleh `InformasiKapal`.
+Pada `KapalEkonomi`, class juga menggunakan `implements InformasiKapal` dan mengimplementasikan kedua method yang ditentukan oleh interface. Informasi yang ditampilkan disesuaikan dengan kapal ekonomi, termasuk fasilitas yang tersedia. 
+
+interface tersebut kemudian digunakan pada `PemesananView` untuk menampilkan informasi kapal. Program mengecek apakah objek kapal mengimplementasikan `InformasiKapal`, kemudian menggunakan interface tersebut untuk memanggil method informasi kapal. Dengan penerapan ini, proses penampilan informasi kapal menjadi lebih terstruktur karena class yang ingin menyediakan informasi dasar dan fasilitas harus mengikuti kontrak yang telah ditentukan oleh `InformasiKapal`.
