@@ -25,7 +25,6 @@ public class Pemesanan {
         setJumlahTiket(jumlahTiket);
     }
 
-    // Constructor overloading
     public Pemesanan(Penumpang penumpang, Kapal kapal) {
         this(penumpang, kapal, 1);
     }
